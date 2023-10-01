@@ -5,16 +5,20 @@ create({
     session: 'druida-bot',
     multidevice: true
   })
-  .then((client) => start(client))
+  .then((client) => {
+    start(client)
+    console.log("Server started!")
+  })
   .catch((erro) => {
     console.log(erro);
 });
 
 function start(client) {
   client.onMessage((message) => {
-    if (message.body === 'd20' && message.isGroupMsg === false) {
+    if (message.body === 'd20') {
+      let randomNumber = Math.floor(Math.random() * 20) + 1;
       client
-        .sendText(message.from, Math.floor(Math.random() * 20) + 1)
+        .sendText(message.from, randomNumber.toString())
         .then((result) => {
           console.log('Result: ', result); //return object success
         })

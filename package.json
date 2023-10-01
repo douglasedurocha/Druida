@@ -1,0 +1,36 @@
+{
+  "name": "druida",
+  "version": "1.0.0",
+  "description": "Druida is a celtic Whatsapp chatbot that integrates with generative AI for chat RPGs",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "venom-bot": "^5.0.12"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douglasedurocha/Druida.git"
+  },
+  "keywords": [
+    "bot",
+    "chatbot",
+    "whatsapp",
+    "openai",
+    "rpg"
+  ],
+  "author": "douglasedurocha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/douglasedurocha/Druida/issues"
+  },
+  "homepage": "https://github.com/douglasedurocha/Druida#readme"
+}

@@ -12,7 +12,7 @@
 <a href="https://github.com/douglasedurocha/Druida/network/members"><img title="Forks" src="https://img.shields.io/github/forks/douglasedurocha/Druida?color=red&style=flat-square"></a>
 </p>
 
-<div align="center">Druida is a celtic Whatsapp chatbot that integrates with NovaAI for chat RPGs</div>
+<div align="center">Druida is a celtic Whatsapp chatbot that integrates with generative AI for chat RPGs</div>
 
 ## Clone this project
 
@@ -33,9 +33,9 @@ Install the dependencies
 ```
 
 ### Usage
-Replace this part in .env file with your <a href="https://nova-oss.com">NovaAI API KEY</a>
+Replace this part in .env file with your <a href="https://discord.com/invite/kvYDFZY7XZ">ZUKI API KEY</a>
 ```bash
-NOVAAI_API_KEY="CHANGE ME"
+API_KEY="CHANGE ME"
 ```
 Then run
 ```bash
@@ -50,4 +50,4 @@ Then run
 |       ❌       | RPG Tokens Management |
 |       ❌       | AI Conversation |
 |       ❌       | AI Image Generation |
-|       ❌       | AI Image Generation |
+|       ❌       | Autopilot |
