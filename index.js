@@ -1,6 +1,7 @@
-// Supports ES6
-import { create, Whatsapp } from 'venom-bot';
+// main.js
+import { create } from 'venom-bot';
 import { msgHandler } from './msgHandler.js';
+import startTerminal from './terminal.js';
 
 create({
     session: 'druida-bot',
@@ -8,15 +9,15 @@ create({
 })
 .then((client) => {
     start(client);
-    console.log("Server started!")
+    console.log("Server started!");
+    startTerminal(client);
 })
-.catch((erro) => {
-    console.log(erro);
+.catch((error) => {
+    console.error(error);
 });
 
 function start(client) {
     client.onMessage((message) => {
-        msgHandler(client, message)
+        msgHandler(client, message);
     });
 }
-
