@@ -23,9 +23,9 @@
 
 ## Getting started:
 
-Copy the .env.example into a new .env file
+Copy the config-example.json into a new config.json file
 ```bash
-> cp .env.example .env
+> cp config-example.json config.json
 ```
 Install the dependencies
 ```bash
@@ -33,7 +33,7 @@ Install the dependencies
 ```
 
 ### Usage
-Replace this part in .env file with your <a href="https://discord.com/invite/kvYDFZY7XZ">ZUKI API KEY</a>
+Replace this part in config.json file with your <a href="https://discord.com/invite/kvYDFZY7XZ">ZUKI API KEY</a>
 ```bash
 API_KEY="CHANGE ME"
 ```

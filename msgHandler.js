@@ -1,5 +1,5 @@
 import { dice } from './lib/dices.js'
-import { info } from './lib/token.js'
+import { info, inventory, status } from './lib/token.js'
 import startTerminal from './terminal.js';
 
 const prefix = '.';
@@ -19,7 +19,9 @@ async function sendMessage(client, from, responseMessage, isTerminalMsg=false){
             console.error('Error when sending: ', erro);
         });
 
-    startTerminal(client);
+    if(!isTerminalMsg){
+        startTerminal(client);
+    }
 }
 
 function cleanString(input){
@@ -60,7 +62,13 @@ async function msgHandler(client, receivedMessage){
                     break
                 // Person the player's attributes
                 case 'info':
-                    responseMessage = info(receivedMessage.author, params) 
+                    responseMessage = await info(receivedMessage.author, ...params) 
+                    break
+                case 'inventory':
+                    responseMessage = await inventory(receivedMessage.author, ...params) 
+                    break
+                case 'status':
+                    responseMessage = await status(receivedMessage.author, ...params) 
                     break
                 // Create a new AI character
                 case 'person':
