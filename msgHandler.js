@@ -1,33 +1,18 @@
 import { dice } from './lib/dices.js'
 import { info, inventory, status } from './lib/token.js'
-import startTerminal from './terminal.js';
 
 const prefix = '.';
 
-async function sendMessage(client, from, responseMessage, isTerminalMsg=false){
-    if(!isTerminalMsg){
-        responseMessage = '(づ ◕‿◕ )づ 𝓓𝓻𝓾𝓲𝓭𝓪 \n' + responseMessage
-    }
+async function sendMessage(client, from, responseMessage){
+    responseMessage = '(づ ◕‿◕ )づ 𝓓𝓻𝓾𝓲𝓭𝓪 \n' + responseMessage
     await client
         .sendText(from, responseMessage)
         .then((result) => {
-            let response = isTerminalMsg ? "Sent via terminal: \n" : "\nSent by Druida: \n"
-            response += result.text;
             console.log(response);
         })
         .catch((erro) => {
             console.error('Error when sending: ', erro);
         });
-
-    if(!isTerminalMsg){
-        startTerminal(client);
-    }
-}
-
-function cleanString(input){
-    input = input.substring(1);
-    input = input.toLowerCase();
-    return input
 }
 
 function parseCommand(input) {
@@ -53,7 +38,7 @@ async function msgHandler(client, receivedMessage){
     if(receivedMessage.body[0] == prefix){
         console.log("\nCommand received: \n", receivedMessage.body)
         const { command, params } = parseCommand(receivedMessage.body);
-        try{
+        try {
             let responseMessage;
             switch(command){
                 // Roll a dice
@@ -85,7 +70,7 @@ async function msgHandler(client, receivedMessage){
                     responseMessage = command + " command not found"
             }
             await sendMessage(client, receivedMessage.from, responseMessage);
-        }catch (error){
+        } catch (error) {
             console.log(error)
         }
     }

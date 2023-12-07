@@ -3,6 +3,5 @@
   "apiBase": "https://zukijourney.xyzbot.net/v1",
   "groupNumber": "<your_rpg_number>@g.us",
   "gamemasters": ["<gamemaster_number@c.us>"],
-  "autopilot": false,
-  "terminal": true
+  "autopilot": false
 }
